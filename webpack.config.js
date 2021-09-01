@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
 	context: __dirname,
@@ -14,7 +15,7 @@ module.exports = {
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
-					loader: ["babel-loader", "eslint-loader"]
+					loader: "babel-loader"
 				}
 			},
 			{
@@ -52,6 +53,7 @@ module.exports = {
 			logo: "./public/logo512.png",
 			mode: "webapp",
 			manifest: "./public/manifest.json"
-		})
+		}),
+		new ESLintPlugin()
 	]
 };

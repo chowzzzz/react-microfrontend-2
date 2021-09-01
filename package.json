@@ -4,30 +4,41 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack-dev-server --mode development",
-		"serve": "webpack --mode development",
-		"build": "webpack --mode production",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"start": " npm run watch:css && webpack-dev-server --mode development",
+		"serve": " npm run watch:css && webpack --mode development",
+		"build": " npm run watch:css && webpack --mode production",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch:css": "postcss src/styles/tailwind.css -o src/styles/output.css"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@reduxjs/toolkit": "^1.6.1",
 		"react": "^17.0.2",
-		"react-dom": "^17.0.2"
+		"react-dom": "^17.0.2",
+		"react-redux": "^7.2.4",
+		"redux": "^4.1.1"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.14.8",
 		"@babel/core": "^7.15.0",
 		"@babel/preset-env": "^7.15.0",
 		"@babel/preset-react": "^7.14.5",
+		"autoprefixer": "^10.3.3",
 		"babel-loader": "^8.2.2",
 		"css-loader": "^6.2.0",
+		"eslint": "^7.32.0",
+		"eslint-plugin-react": "^7.25.1",
+		"eslint-plugin-react-hooks": "^4.2.0",
 		"favicons": "^6.2.2",
 		"favicons-webpack-plugin": "^5.0.2",
 		"file-loader": "^6.2.0",
 		"html-webpack-plugin": "^5.3.2",
+		"postcss": "^8.3.6",
+		"postcss-cli": "^8.3.1",
 		"style-loader": "^3.2.1",
+		"tailwindcss": "^2.2.9",
 		"webpack": "^5.51.1",
 		"webpack-cli": "^4.8.0",
 		"webpack-dev-server": "^4.1.0"

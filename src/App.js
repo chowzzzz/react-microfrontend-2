@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
-import "./styles/output.css"
+import "./styles/output.css";
+import "antd/dist/antd.less";
+
+import { Button, DatePicker, version } from "antd";
 
 class App extends Component {
 	render() {
@@ -16,6 +19,12 @@ class App extends Component {
 				<button className="p-4 bg-green-600 rounded-lg font-bold text-white mt-5 hover:bg-gray-600">
 					Hello Friends 🚀
 				</button>
+
+				<h1>antd version: {version}</h1>
+				<DatePicker />
+				<Button type="primary" style={{ marginLeft: 8 }}>
+					Primary Button
+				</Button>
 			</div>
 		);
 	}

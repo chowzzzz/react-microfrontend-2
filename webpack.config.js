@@ -24,6 +24,34 @@ module.exports = {
 				use: ["style-loader", "css-loader"]
 			},
 			{
+				test: /\.less$/,
+				use: [
+					{
+						loader: "style-loader"
+					},
+					{
+						loader: "css-loader"
+					},
+					{
+						loader: "less-loader",
+						options: {
+							lessOptions: {
+								modifyVars: {
+									// hack: `true; @import "${path.resolve(
+									// 	__dirname,
+									// 	"theme.less"
+									// )}"`
+									"primary-color": "#494097",
+									"font-family":
+										"Source Sans Pro -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"
+								},
+								javascriptEnabled: true
+							}
+						}
+					}
+				]
+			},
+			{
 				test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
 				type: "asset/resource"
 			}

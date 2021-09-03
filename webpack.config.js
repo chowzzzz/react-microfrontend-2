@@ -2,6 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
+
+const port = process.env.PORT || 3000;
 
 module.exports = {
 	context: __dirname,
@@ -62,11 +65,12 @@ module.exports = {
 	// Where files should be sent once they are bundled
 	output: {
 		path: path.join(__dirname, "/dist"),
-		filename: "index.bundle.js"
+		filename: "index.bundle.js",
+		clean: true
 	},
 	// webpack 5 comes with devServer which loads in development mode
 	devServer: {
-		port: 3000,
+		port: port,
 		hot: true
 	},
 	// HtmlWebpackPlugin ensures webpack knows which html file template to follow
@@ -82,6 +86,7 @@ module.exports = {
 			mode: "webapp",
 			manifest: "./public/manifest.json"
 		}),
-		new ESLintPlugin()
+		new ESLintPlugin(),
+		new Dotenv()
 	]
 };

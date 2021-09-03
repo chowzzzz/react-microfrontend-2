@@ -14,6 +14,8 @@ Feel free to clone this repo and run:
 $ npm start
 ```
 
+If there is a need to set up your environment variables, create your own `.env` file and input your own values. The `.env.example` file shows an example of what can be included.
+
 ### References:
 
 ---

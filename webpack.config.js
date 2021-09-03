@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 
@@ -71,7 +70,8 @@ module.exports = {
 	// webpack 5 comes with devServer which loads in development mode
 	devServer: {
 		port: port,
-		hot: true
+		hot: true,
+		historyApiFallback: true
 	},
 	// HtmlWebpackPlugin ensures webpack knows which html file template to follow
 	plugins: [
@@ -79,11 +79,6 @@ module.exports = {
 			template: "./public/index.html",
 			filename: "./index.html",
 			favicon: "./public/favicon.ico",
-			manifest: "./public/manifest.json"
-		}),
-		new FaviconsWebpackPlugin({
-			logo: "./public/logo512.png",
-			mode: "webapp",
 			manifest: "./public/manifest.json"
 		}),
 		new ESLintPlugin(),

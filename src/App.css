@@ -16,3 +16,9 @@ h6 {
 	font-family: Open Sans;
 	font-weight: 700 !important;
 }
+
+navbar {
+	width: 100 + "vw";
+	height: 80;
+	background-color: "lightblue";
+}

@@ -45,7 +45,6 @@ This is the template of how our folder will be structured.
         │       │   ├── CategoryComponent.jsx
         │       │   └── HomePageComponent.jsx
         │       └── HomePageContainer.js
-        ├── routes.js
         ├── state
         │   ├── article
         │   │   ├── articleActions.js

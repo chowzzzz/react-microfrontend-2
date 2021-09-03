@@ -16,6 +16,52 @@ $ npm start
 
 If there is a need to set up your environment variables, create your own `.env` file and input your own values. The `.env.example` file shows an example of what can be included.
 
+## Folder structure
+
+---
+
+This is the template of how our folder will be structured.
+
+|── src
+    ├── api
+    │   ├── apiHandler.js
+    │   ├── articleApi.js
+    │   ├── categoryApi.js
+    │   └── userApi.js
+    ├── common
+    │   ├── components
+    │   │   └── ArticleComponent.jsx
+    │   └── containers
+    │       └── ArticleContainer.js
+    ├── index.js
+    ├── pages
+    │   ├── CategoryPage
+    │   │   ├── CategoryPageContainer.js
+    │   │   └── components
+    │   │       └── CategoryPageComponent.jsx
+    │   └── HomePage
+    │       ├── components
+    │       │   ├── ArticleListComponent.jsx
+    │       │   ├── CategoryComponent.jsx
+    │       │   └── HomePageComponent.jsx
+    │       └── HomePageContainer.js
+    ├── routes.js
+    ├── state
+    │   ├── article
+    │   │   ├── articleActions.js
+    │   │   └── articleReducer.js
+    │   ├── category
+    │   │   ├── categoryActions.js
+    │   │   └── categoryReducer.js
+    │   ├── middleware.js
+    │   ├── store.js
+    │   └── user
+    │       ├── userActions.js
+    │       └── userReducer.js
+    └── utils
+        └── authUtils.js  
+
+
 ### References:
 
 ---

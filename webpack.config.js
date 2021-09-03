@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
+const { ModuleFederationPlugin } = require("webpack").container;
 
 const port = process.env.PORT || 3000;
 
@@ -82,6 +83,14 @@ module.exports = {
 			manifest: "./public/manifest.json"
 		}),
 		new ESLintPlugin(),
-		new Dotenv()
+		new Dotenv(),
+		new ModuleFederationPlugin({
+			name: "react-webpack",
+			library: { type: "var", name: "react-webpack" },
+			filename: "remoteEntry.js",
+			remotes: {},
+			exposes: {},
+			shared: ["react", "react-dom", "react-router-dom"]
+		})
 	]
 };
